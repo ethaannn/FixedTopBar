@@ -37,6 +37,12 @@
         android:text="4. 通过android5.0的MaterialDesign风格" />
 
     <Button
+        android:id="@+id/btn_material_design_2"
+        style="@style/btn_style"
+        android:onClick="onClickMaterialDesign2"
+        android:text=" 通过android5.0的MaterialDesign风格2" />
+
+    <Button
         android:id="@+id/btn_rv_decoration"
         style="@style/btn_style"
         android:onClick="onClickDecoration"
@@ -47,4 +53,10 @@
         style="@style/btn_style"
         android:onClick="onClickGroupAndDecoration"
         android:text="扩展实现:分组+吸顶效果的实现" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_complex_ceilings"
+        style="@style/btn_style"
+        android:onClick="onComplexCeilings"
+        android:text="Android原生实现复杂吸顶效果" />
 </LinearLayout>

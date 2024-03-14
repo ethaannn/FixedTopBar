@@ -5,7 +5,7 @@
     android:focusableInTouchMode="true">
 
 
-    <com.lhx.scrollbardemo.widget.MyScrollView
+    <com.ethan.ceiling.widget.MyScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,7 +28,9 @@
                 android:orientation="vertical"
                 android:visibility="visible">
 
-                <include layout="@layout/inside_fixed_bar" />
+                <include
+                    android:id="@+id/include_inside_fixed_bar"
+                    layout="@layout/inside_fixed_bar" />
             </LinearLayout>
 
             <LinearLayout
@@ -36,17 +38,17 @@
                 android:layout_height="1000dp"
                 android:background="#d2ebaf">
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                </android.support.v7.widget.RecyclerView>
+                </androidx.recyclerview.widget.RecyclerView>
 
             </LinearLayout>
 
         </LinearLayout>
-    </com.lhx.scrollbardemo.widget.MyScrollView>
+    </com.ethan.ceiling.widget.MyScrollView>
 
     <LinearLayout
         android:id="@+id/ll_fixed_parent"

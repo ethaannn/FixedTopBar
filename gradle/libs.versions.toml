@@ -1,0 +1,112 @@
+[versions]
+minSdk = '26'
+targetSdk = "34"
+compileSdk = "34"
+gradle = "8.0.2"
+hiltAndroidGradlePlugin = "2.48"
+kotlinGradlePlugin = "1.8.20"
+versionCode = "11"
+versionName = "0.0.2"
+kotlin = "1.9.23"
+
+[libraries]
+#
+# androidx & kotlin
+#
+androidx-core = 'androidx.core:core-ktx:1.12.0'
+androidx-appcompat = 'androidx.appcompat:appcompat:1.6.1'
+androidx-material = 'com.google.android.material:material:1.11.0'
+androidx-constraintlayout = 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+androidx-lifecycle-runtime-ktx = 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+androidx-lifecycle-livedata-ktx = 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
+androidx-lifecycle-viewmodel = 'androidx.lifecycle:lifecycle-viewmodel:2.7.0'
+androidx-lifecycle-viewmodel-ktx = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
+androidx-navigation-fragment-ktx = 'androidx.navigation:navigation-fragment-ktx:2.7.7'
+androidx-navigation-ui-ktx = 'androidx.navigation:navigation-ui-ktx:2.7.7'
+androidx-splashscreen = 'androidx.core:core-splashscreen:1.0.1'
+
+google-hilt-android = 'com.google.dagger:hilt-android:2.48.1'
+google-hilt-android-compiler = 'com.google.dagger:hilt-android-compiler:2.44'
+#
+# test
+#
+test-junit = 'junit:junit:4.13.2'
+test-android-ext = 'androidx.test.ext:junit:1.1.5'
+test-android-espresso = 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePlugin" }
+jetbrains-annotations = 'org.jetbrains:annotations:23.0.0'
+# 必备
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
+okhttp3-okhttp = 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
+
+kotlin-stdlib = 'org.jetbrains.kotlin:kotlin-stdlib:1.9.23'
+# 数据解析
+fastjson = 'com.alibaba:fastjson:1.2.83'
+gson = 'com.google.code.gson:gson:2.10.1'
+
+# 图片处理
+glide = 'com.github.bumptech.glide:glide:4.16.0'
+
+# commons
+commons-io = 'commons-io:commons-io:2.4'
+commons-lang = 'org.apache.commons:commons-lang3:3.12.0'
+commons-compress = 'org.apache.commons:commons-compress:1.12'
+
+# 日志框架
+slf4j-api = 'org.slf4j:slf4j-api:2.0.9'
+logback-android = 'com.github.tony19:logback-android:3.0.0'
+logback-classic = 'ch.qos.logback:logback-classic:1.2.11'
+# 权限管理
+xxpermissions = 'com.github.getActivity:XXPermissions:16.6'
+## 状态栏沉浸
+ultimatebarx = 'com.gitee.zackratos:UltimateBarX:0.8.0'
+# viewbinding
+viewbinding-ktx = 'com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-ktx:2.1.0'
+common-liveEventBus = 'io.github.jeremyliao:live-event-bus-x:1.8.0'
+common-recyclerview-flexibledivider = 'com.github.ethaannn:RecyclerView-FlexibleDivider:1.4.1'
+common-brv = 'com.github.liangjingkanji:BRV:1.5.8' # https://github.com/liangjingkanji/BRV
+common-recyclerview-adapter-helper = 'io.github.cymchad:BaseRecyclerViewAdapterHelper4:4.1.4' # https://github.com/CymChad/BaseRecyclerViewAdapterHelper/wiki
+common-refresh-layout-kernel = 'io.github.scwang90:refresh-layout-kernel:2.1.0' # https://github.com/scwang90/SmartRefreshLayout
+common-refresh-layout-header-classics = 'io.github.scwang90:refresh-header-classics:2.1.0'
+common-refresh-layout-header-radar = 'io.github.scwang90:refresh-header-radar:2.1.0'
+common-refresh-layout-header-falsify = 'io.github.scwang90:refresh-header-falsify:2.1.0'
+common-refresh-layout-header-material = 'io.github.scwang90:refresh-header-material:2.1.0'
+common-refresh-layout-header-two-level- = 'io.github.scwang90:refresh-header-two-level:2.1.0'
+common-refresh-layout-footer-ball = 'io.github.scwang90:refresh-footer-ball:2.1.0'
+common-refresh-layout-footer-classics = 'io.github.scwang90:refresh-footer-classics:2.1.0'
+common-magicindicator='com.github.hackware1993:MagicIndicator:1.7.0' # https://github.com/hackware1993/MagicIndicator
+common-banner = 'io.github.youth5201314:banner:2.2.3' # https://github.com/youth5201314/banner
+common-bannerViewPager = 'com.github.zhpanvip:bannerviewpager:3.5.12' # https://github.com/zhpanvip/BannerViewPager/
+
+common-backgroundLibrary = 'com.github.JavaNoober.BackgroundLibrary:libraryx:1.7.6' # https://github.com/JavaNoober/BackgroundLibrary
+
+# qmui
+tencent-qmuiteam-qmui = 'com.qmuiteam:qmui:2.1.0'
+tencent-qmuiteam-arch = 'com.qmuiteam:arch:2.1.0'
+tencent-qmuiteam-arch-compiler = 'com.qmuiteam:arch-compiler:2.0.1'# kapt
+tencent-mmkv-static = 'com.tencent:mmkv-static:1.2.14'
+
+
+wsmanager = 'com.rabtman.wsmanager:wsmanager:1.0.2'
+
+kotlin-android-ext = 'com.github.ethann-tech:kotlin-android-extension:1.0.6'
+
+# other
+androidwheelview = 'com.github.weidongjian:androidWheelView:1.0.0'
+streamex = 'one.util:streamex:0.8.1'
+avi-library = 'com.wang.avi:library:2.1.3'
+
+# 友盟
+umsdk-common = 'com.umeng.umsdk:common:9.5.0'
+umsdk-asms = 'com.umeng.umsdk:asms:1.4.1'
+umsdk-apm = 'com.umeng.umsdk:apm:1.7.0'
+umsdk-abtest = 'com.umeng.umsdk:abtest:1.0.0'
+
+# 常用核心三方库
+base-popup = 'io.github.razerdp:BasePopup:3.2.1'
+[plugins]
+jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
