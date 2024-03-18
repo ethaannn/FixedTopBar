@@ -67,11 +67,10 @@ commons-compress = 'org.apache.commons:commons-compress:1.12'
 # 日志框架
 slf4j-api = 'org.slf4j:slf4j-api:2.0.9'
 slf4j-logback-android = 'com.github.tony19:logback-android:3.0.0'
-slf4j-logback-classic = 'ch.qos.logback:logback-classic:1.2.11'
 # 权限管理
 xxpermissions = 'com.github.getActivity:XXPermissions:16.6'
 ## 状态栏沉浸
-ultimatebarx = 'com.gitee.zackratos:UltimateBarX:0.8.0'
+common-ultimatebarx = 'com.gitee.zackratos:UltimateBarX:0.8.0'
 # viewbinding
 viewbinding-ktx = 'com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-ktx:2.1.0'
 common-liveEventBus = 'io.github.jeremyliao:live-event-bus-x:1.8.0'

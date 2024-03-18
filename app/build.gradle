@@ -40,6 +40,16 @@ dependencies {
     implementation libs.glide
     implementation libs.common.recyclerview.adapter.helper
     implementation(libs.common.guava)
+    implementation(libs.common.ultimatebarx)
+    implementation(libs.slf4j.api)
+    implementation(libs.slf4j.logback.android)
+//    implementation(libs.slf4j.logback.classic)
+    implementation(libs.tencent.qmuiteam.qmui)
+    implementation(libs.tencent.qmuiteam.arch)
+    kapt(libs.tencent.qmuiteam.arch.compiler)
+    implementation(libs.commons.io)
+    implementation(libs.commons.lang)
+    implementation(libs.commons.compress)
     implementation libs.common.brv
     implementation libs.common.magicindicator
     implementation libs.common.backgroundLibrary
@@ -53,4 +63,5 @@ dependencies {
     implementation libs.kotlin.android.ext
     implementation libs.koin.android
     implementation libs.koin.compat
+
 }
