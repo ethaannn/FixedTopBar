@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smart.refresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.FragmentRideCar">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/scrollerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:fadingEdge="none"
+        app:elevation="@dimen/dp_0"
+        android:scrollbars="none"
+        android:overScrollMode="never">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fadingEdge="none"
+            android:fitsSystemWindows="false"
+            app:elevation="@dimen/dp_0">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                app:elevation="@dimen/dp_0"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:statusBarScrim="@android:color/transparent">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/hide_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:fadingEdge="none"
+                    android:fitsSystemWindows="true"
+                    app:elevation="@dimen/dp_0" />
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    app:banner_indicator_gravity="right"
+                    app:banner_indicator_height="@dimen/dp_6"
+                    app:banner_indicator_marginBottom="@dimen/dp_15"
+                    app:banner_indicator_marginRight="@dimen/dp_15"
+                    app:banner_indicator_normal_color="@color/color_9F3BBECC"
+                    app:banner_indicator_normal_width="@dimen/dp_6"
+                    app:banner_indicator_radius="0dp"
+                    app:banner_indicator_selected_color="@color/color_3BBECC"
+                    app:banner_indicator_selected_width="@dimen/dp_15" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout_sub_menu"
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:tabIndicatorHeight="0dp"
+                app:tabGravity="start"
+                app:tabRippleColor="@null"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
+                app:tabMode="auto"
+                app:tabSelectedTextColor="@color/colorPrimary" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+</com.scwang.smart.refresh.layout.SmartRefreshLayout>

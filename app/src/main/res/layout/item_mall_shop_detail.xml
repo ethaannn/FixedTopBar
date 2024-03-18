@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_shop_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="@dimen/dp_234"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="w, 16:9" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_shop_name"
+        android:layout_marginStart="@dimen/dp_4"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintStart_toStartOf="@id/iv_shop_cover"
+        app:layout_constraintTop_toBottomOf="@id/iv_shop_cover"
+        android:layout_width="wrap_content"
+        android:textColor="@color/common_font_primary"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        tools:text="商品名称" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_shop_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:textColor="@color/common_font_second"
+        android:textSize="@dimen/sp_13"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@id/tv_shop_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_shop_name"
+        app:layout_goneMarginTop="0dp"
+        tools:text="商品分类"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4"
+        android:lines="1"
+        android:textSize="@dimen/sp_13"
+        android:textColor="@color/common_font_primary"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/tv_shop_detail"
+        app:layout_constraintTop_toBottomOf="@id/tv_shop_detail"
+        tools:text="￥500" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

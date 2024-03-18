@@ -37,6 +37,7 @@ dependencies {
     implementation libs.androidx.appcompat
     implementation libs.androidx.material
     implementation libs.androidx.constraintlayout
+    implementation libs.glide
     implementation libs.common.recyclerview.adapter.helper
     implementation libs.common.brv
     implementation libs.common.magicindicator

@@ -83,7 +83,7 @@ public class NormalAdapter extends RecyclerView.Adapter<NormalAdapter.ViewHolder
                 break;
             case TYPE_NORMAL:
             default:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_mall_shop_detail, parent, false);
                 break;
         }
 
@@ -126,7 +126,7 @@ public class NormalAdapter extends RecyclerView.Adapter<NormalAdapter.ViewHolder
             } else if (itemView == mFooterView) {
                 return;
             }
-            mTextView = itemView.findViewById(R.id.tv_index);
+            mTextView = itemView.findViewById(R.id.tv_shop_name);
 
         }
     }

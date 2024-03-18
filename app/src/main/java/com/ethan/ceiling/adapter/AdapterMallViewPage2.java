@@ -6,14 +6,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.ethan.ceiling.ui.fragment.FragmentChild;
+import com.ethan.ceiling.ui.fragment.FragmentMallShoppingList;
 
 import java.util.List;
 
-public class AdapterCategoryPager2 extends FragmentStateAdapter {
+public class AdapterMallViewPage2 extends FragmentStateAdapter {
 
     private List<String> list;
-    public AdapterCategoryPager2(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle, List<String> list) {
+    public AdapterMallViewPage2(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle, List<String> list) {
         super(fragmentManager, lifecycle);
         this.list =list;
     }
@@ -21,7 +21,7 @@ public class AdapterCategoryPager2 extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        return FragmentChild.newInstance(list.get(position),"test");
+        return FragmentMallShoppingList.newInstance(list.get(position),"test");
     }
 
     @Override

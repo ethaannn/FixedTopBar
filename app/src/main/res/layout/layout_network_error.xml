@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_network_error"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_gray_white"
+    android:fitsSystemWindows="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_network_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_44"
+        tools:src="@drawable/empty_view" />
+
+    <TextView
+        android:id="@+id/tv_network_error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:gravity="center"
+        android:textColor="@color/color_7C"
+        android:textSize="@dimen/sp_12"
+        tools:ignore="MissingPrefix"
+        tools:text="网络异常" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_reload"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginBottom="@dimen/dp_80"
+        android:background="@drawable/selector_blue_90_corner_4"
+        android:text="重新加载"
+        android:textColor="@color/common_gray_white"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+</LinearLayout>

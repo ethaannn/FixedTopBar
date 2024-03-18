@@ -38,8 +38,8 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, null);
-        TextView tvIndex = view.findViewById(R.id.tv_index);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_mall_shop_detail, null);
+        TextView tvIndex = view.findViewById(R.id.tv_shop_name);
         tvIndex.setText(datas.get(position));
         return view;
 

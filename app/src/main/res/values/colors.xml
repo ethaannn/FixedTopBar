@@ -3,4 +3,33 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="common_gray_white">#F7F7F7</color>
+    <color name="color_3BBECC">#3BBECC</color>
+    <color name="color_9F3BBECC">#9F3BBECC</color>
+    <color name="color_1F3BBECC">#1F3BBECC</color>
+    <color name="color_888f95">#888f95</color>
+    <color name="color_FF221613">#FF221613</color>
+    <color name="color_22888F95">#22888F95</color>
+    <color name="color_FFC2C4CC">#FFC2C4CC</color>
+    <color name="color_E8E8E8">#E8E8E8</color>
+    <color name="color_FFF12D2D">#FFF12D2D</color>
+    <color name="color_221613">#221613</color>
+    <color name="color_7C">#FF7C7C7C</color>
+    <color name="color_ff1313">#ff1313</color>
+    <color name="color_f0f0f0">#f0f0f0</color>
+    <color name="color_E7E7E7">#E7E7E7</color>
+
+
+    <color name="common_font_primary">#000000</color>
+    <color name="common_font_second">#53565A</color>
+    <color name="common_font_three">#A7A8AA</color>
+    <color name="common_font_four">#FF7C7C7C</color>
+
+    <color name="common_background_primary">#02FFCF</color>
+    <color name="common_background_second">#53565A</color>
+    <color name="common_background_three">#C7C7C7</color>
+    <color name="common_background_four">#F7F7F7</color>"
+    <color name="common_background_white">#FFFFFF</color>
+
+
 </resources>

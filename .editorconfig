@@ -1,16 +1,18 @@
 root = true
 
 [*]
-charset = utf-8
+charset = utf-8 # 设置文件字符集为UTF-8
 end_of_line = crlf
-indent_size = 4
-indent_style = space
-insert_final_newline = false
+indent_size = 4 # 每级缩进使用4个空格
+indent_style = space # 缩进风格使用空格
+insert_final_newline = false # 确保文件以一个新行结尾
 max_line_length = 256
 tab_width = 4
+trim_trailing_whitespace =true  # 删除行尾多余空白字符
 
 [{*.kts,*.kt}]
-ij_continuation_indent_size = 4
+ij_kotlin_indent_size =4
+ij_continuation_indent_size = 4 # 设置Kotlin续行（换行后）的额外缩进量
 ij_kotlin_align_in_columns_case_branch = true
 ij_kotlin_align_multiline_binary_operation = true
 ij_kotlin_align_multiline_extends_list = true
@@ -18,5 +20,11 @@ ij_kotlin_field_annotation_wrap = off
 ij_kotlin_line_break_after_multiline_when_entry = false
 
 [*.java]
-ij_continuation_indent_size=4
+
+# 行缩进为4个空格
+ij_continuation_indent_size=4  # 设置Kotlin续行（换行后）的额外缩进量
 ij_java_align_group_field_declarations = true
+ij_java_align_multiline_extends_list = true
+ij_java_indent_case_from_switch =true
+ij_any_indent_case_from_switch = true
+

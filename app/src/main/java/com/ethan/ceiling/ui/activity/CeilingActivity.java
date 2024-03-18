@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.ethan.ceiling.adapter.AdapterCategoryPager2;
+import com.ethan.ceiling.adapter.AdapterMallViewPage2;
 import com.ethan.ceiling.databinding.ActivityCeilingBinding;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -104,7 +104,7 @@ public class CeilingActivity extends AppCompatActivity {
     }
 
 
-    private AdapterCategoryPager2 mAdapter;
+    private AdapterMallViewPage2 mAdapter;
     private void initViewPager2(){
         mBinding.viewPager2.setOffscreenPageLimit(ViewPager2.OFFSCREEN_PAGE_LIMIT_DEFAULT);
         mBinding.viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -113,7 +113,7 @@ public class CeilingActivity extends AppCompatActivity {
                 super.onPageSelected(position);
             }
         });
-        mAdapter =new AdapterCategoryPager2(getSupportFragmentManager(),getLifecycle(),tabListFixed);
+        mAdapter =new AdapterMallViewPage2(getSupportFragmentManager(),getLifecycle(),tabListFixed);
         mBinding.viewPager2.setAdapter(mAdapter);
         TabLayoutMediator mMediator = new TabLayoutMediator(mBinding.tabLayoutFixed, mBinding.viewPager2, (tab, position) -> {
             AppCompatTextView tabView = new AppCompatTextView(this);

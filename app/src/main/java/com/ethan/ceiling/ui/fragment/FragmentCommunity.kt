@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ethan.ceiling.R
+import com.ethan.ceiling.databinding.FragmentCommunityBinding
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -14,6 +15,7 @@ class FragmentCommunity : Fragment() {
 
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var mBinding:FragmentCommunityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,11 +24,6 @@ class FragmentCommunity : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_community, container, false)
-    }
-
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) = FragmentCommunity().apply {
@@ -36,4 +33,16 @@ class FragmentCommunity : Fragment() {
             }
         }
     }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+       val rootView= inflater.inflate(R.layout.fragment_community, container, false)
+        mBinding = FragmentCommunityBinding.bind(rootView)
+        return mBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mBinding.tvContent.text =param1
+    }
+
+
 }

@@ -39,7 +39,7 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view"
-                    tools:listitem="@layout/list_item"
+                    tools:listitem="@layout/item_mall_shop_detail"
                     android:layout_width="match_parent"
                     android:layout_height="2000dp">
 
