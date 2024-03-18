@@ -18,18 +18,23 @@ import com.ethan.ceiling.bean.BeanBanner
 import com.ethan.ceiling.common.ARG_PARAM1
 import com.ethan.ceiling.common.ARG_PARAM2
 import com.ethan.ceiling.databinding.FragmentRideCarBinding
+import com.ethan.ceiling.event.EventAppBarOffsetChanged
 import com.ethan.ceiling.util.ViewUtils
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.common.eventbus.EventBus
 import com.youth.banner.indicator.RectangleIndicator
 import io.github.uhsk.kit.android.sp2px
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
 
-class FragmentRideCar : Fragment() {
+@Suppress("UnstableApiUsage")
+class FragmentRideCar : Fragment(), KoinComponent {
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var mBinding: FragmentRideCarBinding
-
+    private val mGuavaEventBus : EventBus by inject()
     private val mSubTabList = arrayListOf("新品上架", "户外运动", "禅茶一味", "亲自生活", "出行指南", "用车无忧")
 
     private val mBannerList = arrayListOf(
@@ -44,6 +49,7 @@ class FragmentRideCar : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        mGuavaEventBus.register(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -56,6 +62,12 @@ class FragmentRideCar : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initBanner()
         initViewPager2()
+        initListener()
+    }
+    private fun initListener(){
+        mBinding.appbar.addOnOffsetChangedListener { _, i ->
+            mGuavaEventBus.post(EventAppBarOffsetChanged(offset = i))
+        }
     }
 
     private fun initBanner() {
@@ -71,8 +83,8 @@ class FragmentRideCar : Fragment() {
         @JvmStatic
         fun newInstance(param1: String, param2: String) = FragmentRideCar().apply {
             arguments = Bundle().apply {
-                putString(ARG_PARAM1, param1)
-                putString(ARG_PARAM2, param2)
+               this.putString(ARG_PARAM1, param1)
+               this.putString(ARG_PARAM2, param2)
             }
         }
     }
@@ -118,5 +130,6 @@ class FragmentRideCar : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         mBinding.viewPager2.unregisterOnPageChangeCallback(mCallback)
+        mGuavaEventBus.unregister(this)
     }
 }

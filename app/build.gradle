@@ -39,6 +39,7 @@ dependencies {
     implementation libs.androidx.constraintlayout
     implementation libs.glide
     implementation libs.common.recyclerview.adapter.helper
+    implementation(libs.common.guava)
     implementation libs.common.brv
     implementation libs.common.magicindicator
     implementation libs.common.backgroundLibrary
@@ -50,4 +51,6 @@ dependencies {
     implementation libs.common.refresh.layout.header.classics
     implementation libs.common.refresh.layout.footer.classics
     implementation libs.kotlin.android.ext
+    implementation libs.koin.android
+    implementation libs.koin.compat
 }

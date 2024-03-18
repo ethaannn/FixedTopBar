@@ -22,9 +22,10 @@ import com.ethan.flexibleddivider.HorizontalDividerItemDecoration
 import com.ethan.flexibleddivider.VerticalDividerItemDecoration
 import io.github.uhsk.kit.android.dp2px
 import io.github.uhsk.kit.asColor
+import org.koin.core.component.KoinComponent
 
 
-class FragmentMallShoppingList : Fragment() {
+class FragmentMallShoppingList : Fragment(),KoinComponent {
     private var mParam1: String? = null
     private var mParam2: String? = null
     private lateinit var mBinding: FragmentChildBinding
@@ -77,6 +78,7 @@ class FragmentMallShoppingList : Fragment() {
             }
         }
     }
+
 
     private fun initListData(): MutableList<BeanShoppingInfo> {
         val list: MutableList<BeanShoppingInfo> = mutableListOf()

@@ -1,5 +1,6 @@
 package com.ethan.ceiling.ui.fragment
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,19 +8,26 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.ethan.ceiling.R
 import com.ethan.ceiling.adapter.AdapterMallTopTab
-import com.ethan.ceiling.bean.BeanNav
 import com.ethan.ceiling.common.ARG_PARAM1
 import com.ethan.ceiling.common.ARG_PARAM2
 import com.ethan.ceiling.databinding.FragmentMallBinding
+import com.ethan.ceiling.event.EventAppBarOffsetChanged
+import com.google.common.eventbus.EventBus
+import com.google.common.eventbus.Subscribe
+import io.github.uhsk.kit.android.dp2px
 import net.lucode.hackware.magicindicator.FragmentContainerHelper
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
+import kotlin.math.abs
 
 
-class FragmentMall : Fragment() {
+@Suppress(names = ["UnstableApiUsage"])
+class FragmentMall : Fragment() ,KoinComponent{
     private var param1: String? = null
     private var param2: String? = null
     private lateinit var mBinding: FragmentMallBinding
-
+    private val mGuavaEventBus: EventBus by inject()
     private val mTabList = arrayListOf("驾乘用车", "用车服务", "智能生活")
     private val mFragmentHelper = FragmentContainerHelper()
     private val mAdapter: AdapterMallTopTab by lazy { AdapterMallTopTab(mTabList) }
@@ -30,6 +38,7 @@ class FragmentMall : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        mGuavaEventBus.register(this)
     }
 
     companion object {
@@ -68,6 +77,13 @@ class FragmentMall : Fragment() {
         })
     }
 
+    @Subscribe
+    private fun onGuavaEventBus(event: EventAppBarOffsetChanged) {
+        val mHeight: Float = 300.dp2px().toFloat()
+        val mOffsetY = abs(event.offset).toFloat()
+        val scale: Float = if (mOffsetY / mHeight > 1) 1.toFloat() else mOffsetY / mHeight
+        mBinding.layoutParentTabSegment.setBackgroundColor(Color.argb((scale*255).toInt(),255,255,255))
+    }
 
     private fun switchPages(i: Int) {
         val fm = childFragmentManager
@@ -88,4 +104,8 @@ class FragmentMall : Fragment() {
         ft.commitNowAllowingStateLoss()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        mGuavaEventBus.unregister(this)
+    }
 }

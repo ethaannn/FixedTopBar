@@ -17,7 +17,6 @@ androidx-core = 'androidx.core:core-ktx:1.12.0'
 androidx-appcompat = 'androidx.appcompat:appcompat:1.6.1'
 androidx-material = 'com.google.android.material:material:1.11.0'
 androidx-constraintlayout = 'androidx.constraintlayout:constraintlayout:2.1.4'
-
 androidx-lifecycle-runtime-ktx = 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
 androidx-lifecycle-livedata-ktx = 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
 androidx-lifecycle-viewmodel = 'androidx.lifecycle:lifecycle-viewmodel:2.7.0'
@@ -25,9 +24,17 @@ androidx-lifecycle-viewmodel-ktx = 'androidx.lifecycle:lifecycle-viewmodel-ktx:2
 androidx-navigation-fragment-ktx = 'androidx.navigation:navigation-fragment-ktx:2.7.7'
 androidx-navigation-ui-ktx = 'androidx.navigation:navigation-ui-ktx:2.7.7'
 androidx-splashscreen = 'androidx.core:core-splashscreen:1.0.1'
-
+#
+# hilt
+#
 google-hilt-android = 'com.google.dagger:hilt-android:2.48.1'
 google-hilt-android-compiler = 'com.google.dagger:hilt-android-compiler:2.44'
+#
+# koin
+#
+koin-android = 'io.insert-koin:koin-android:3.5.0'
+koin-compat  = 'io.insert-koin:koin-android-compat:3.3.2'
+
 #
 # test
 #
@@ -52,14 +59,15 @@ gson = 'com.google.code.gson:gson:2.10.1'
 glide = 'com.github.bumptech.glide:glide:4.16.0'
 
 # commons
+common-guava    = 'com.google.guava:guava:30.1.1-android'
 commons-io = 'commons-io:commons-io:2.4'
 commons-lang = 'org.apache.commons:commons-lang3:3.12.0'
 commons-compress = 'org.apache.commons:commons-compress:1.12'
 
 # 日志框架
 slf4j-api = 'org.slf4j:slf4j-api:2.0.9'
-logback-android = 'com.github.tony19:logback-android:3.0.0'
-logback-classic = 'ch.qos.logback:logback-classic:1.2.11'
+slf4j-logback-android = 'com.github.tony19:logback-android:3.0.0'
+slf4j-logback-classic = 'ch.qos.logback:logback-classic:1.2.11'
 # 权限管理
 xxpermissions = 'com.github.getActivity:XXPermissions:16.6'
 ## 状态栏沉浸
