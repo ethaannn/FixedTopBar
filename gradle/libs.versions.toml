@@ -33,7 +33,7 @@ google-hilt-android-compiler = 'com.google.dagger:hilt-android-compiler:2.44'
 # koin
 #
 koin-android = 'io.insert-koin:koin-android:3.5.0'
-koin-compat  = 'io.insert-koin:koin-android-compat:3.3.2'
+koin-compat = 'io.insert-koin:koin-android-compat:3.3.2'
 
 #
 # test
@@ -59,7 +59,7 @@ gson = 'com.google.code.gson:gson:2.10.1'
 glide = 'com.github.bumptech.glide:glide:4.16.0'
 
 # commons
-common-guava    = 'com.google.guava:guava:30.1.1-android'
+common-guava = 'com.google.guava:guava:30.1.1-android'
 commons-io = 'commons-io:commons-io:2.4'
 commons-lang = 'org.apache.commons:commons-lang3:3.12.0'
 commons-compress = 'org.apache.commons:commons-compress:1.12'
@@ -85,7 +85,7 @@ common-refresh-layout-header-material = 'io.github.scwang90:refresh-header-mater
 common-refresh-layout-header-two-level- = 'io.github.scwang90:refresh-header-two-level:2.1.0'
 common-refresh-layout-footer-ball = 'io.github.scwang90:refresh-footer-ball:2.1.0'
 common-refresh-layout-footer-classics = 'io.github.scwang90:refresh-footer-classics:2.1.0'
-common-magicindicator='com.github.hackware1993:MagicIndicator:1.7.0' # https://github.com/hackware1993/MagicIndicator
+common-magicindicator = 'com.github.hackware1993:MagicIndicator:1.7.0' # https://github.com/hackware1993/MagicIndicator
 common-banner = 'io.github.youth5201314:banner:2.2.3' # https://github.com/youth5201314/banner
 common-bannerViewPager = 'com.github.zhpanvip:bannerviewpager:3.5.12' # https://github.com/zhpanvip/BannerViewPager/
 

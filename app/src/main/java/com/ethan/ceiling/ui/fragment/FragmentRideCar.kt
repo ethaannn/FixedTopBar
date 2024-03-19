@@ -19,12 +19,15 @@ import com.ethan.ceiling.common.ARG_PARAM1
 import com.ethan.ceiling.common.ARG_PARAM2
 import com.ethan.ceiling.databinding.FragmentRideCarBinding
 import com.ethan.ceiling.event.EventAppBarOffsetChanged
+import com.ethan.ceiling.manager.IRuntimeManager
 import com.ethan.ceiling.util.ViewUtils
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.common.eventbus.EventBus
 import com.youth.banner.indicator.RectangleIndicator
+import io.github.uhsk.kit.android.dp2px
 import io.github.uhsk.kit.android.sp2px
+import org.koin.android.ext.android.get
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
@@ -60,13 +63,21 @@ class FragmentRideCar : Fragment(), KoinComponent {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        mBinding.hideToolbar.apply {
+            layoutParams.apply {
+                setPadding(0, get<IRuntimeManager>().statusBarHeight+48.dp2px(), 0, 0)
+            }
+        }
         initBanner()
         initViewPager2()
         initListener()
     }
     private fun initListener(){
-        mBinding.appbar.addOnOffsetChangedListener { _, i ->
-            mGuavaEventBus.post(EventAppBarOffsetChanged(offset = i))
+        mBinding.appbar.addOnOffsetChangedListener { appbarLayout, i ->
+
+            mGuavaEventBus.post(EventAppBarOffsetChanged( if (i>= appbarLayout.totalScrollRange){
+            0
+            }else 1,offset = i))
         }
     }
 

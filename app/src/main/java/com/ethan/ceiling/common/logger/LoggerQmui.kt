@@ -1,4 +1,4 @@
-package com.ethan.psbc.commons.loggers
+package com.ethan.ceiling.common.logger
 
 import com.qmuiteam.qmui.QMUILog
 

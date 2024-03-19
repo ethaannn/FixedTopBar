@@ -23,7 +23,7 @@ class App : Application(), KoinComponent {
         initLogger()
         val statusBarHeight = UltimateBarX.getStatusBarHeight()
         mImplRuntimeManager.statusBarHeight = statusBarHeight
-        mLogger.debug("LOG:App:onCreate: mImplRuntimeManager={}", mImplRuntimeManager)
+        mLogger.debug("LOG:App:onCreate: mImplRuntimeManager.statusBarHeight={}", mImplRuntimeManager.statusBarHeight)
     }
 
     private fun initLogger() {
