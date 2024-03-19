@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_parent"
+    android:layout_height="match_parent"
     android:focusableInTouchMode="true">
 
 
     <com.ethan.ceiling.widget.MyScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
+        android:layout_height="wrap_content"
+        android:fillViewport="false"
         android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-           android:orientation="vertical">
+            android:orientation="vertical">
 
             <include layout="@layout/header" />
 
@@ -32,21 +34,21 @@
             </LinearLayout>
 
             <LinearLayout
-                android:visibility="visible"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#d2ebaf">
+                android:background="@color/color_3BBECC"
+                android:layout_height="match_parent"
+                android:visibility="visible">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view"
-                    tools:listitem="@layout/item_mall_shop_detail"
                     android:layout_width="match_parent"
-                    android:layout_height="2000dp">
-
-                </androidx.recyclerview.widget.RecyclerView>
+                    android:background="@color/colorAccent"
+                    android:layout_height="2000dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/item_normal_1" />
 
             </LinearLayout>
-
         </LinearLayout>
     </com.ethan.ceiling.widget.MyScrollView>
 
@@ -55,9 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="vertical"
-        android:visibility="gone"
-        tools:visibility="visible">
-
+        android:visibility="gone">
 
         <include layout="@layout/outside_fixed_bar" />
     </LinearLayout>

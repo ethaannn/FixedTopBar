@@ -1,56 +1,53 @@
-package com.ethan.ceiling.ui.activity;
+package com.ethan.ceiling.ui.activity
 
-import android.os.Bundle;
-import android.view.View;
+import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.ethan.ceiling.databinding.ActivityMainBinding
+import com.ethan.ceiling.manager.IRuntimeManager
+import com.ethan.ceiling.ui.activity.ActivityCeilingDouble.Companion.start
+import org.koin.android.ext.android.inject
+import org.koin.core.component.KoinComponent
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.ethan.ceiling.databinding.ActivityMainBinding;
-
-
-public class MainActivity extends AppCompatActivity {
-
-
-    private ActivityMainBinding mBinding;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        mBinding =ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(mBinding.getRoot());
+class MainActivity : AppCompatActivity(), KoinComponent {
+    private lateinit var mBinding: ActivityMainBinding
+    private val mRuntimeManager: IRuntimeManager by inject()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        mBinding = ActivityMainBinding.inflate(layoutInflater)
+        mBinding.layoutParent.apply {
+            layoutParams.apply {
+                setPadding(0, mRuntimeManager.statusBarHeight, 0, 0)
+            }
+        }
+        setContentView(mBinding.getRoot())
     }
 
-    public void onClickTwoTopBar(View view) {
-        TwoSameTopBarActivity.start(this);
+
+
+    fun onClickOneTopBar(view: View) {
+        OneTopBarActivity.start(this)
     }
 
-    public void onClickOneTopBar(View view) {
-        OneTopBarActivity.start(this);
+    fun onClickListView(view: View) {
+
     }
 
-    public void onClickListView(View view) {
-        ListViewAddHeaderActivity.start(this);
+    fun onClickMaterialDesign(view: View) {
+        MaterialDesignTopBarActivity.start(this)
     }
 
-    public void onClickMaterialDesign(View view) {
-        MaterialDesignTopBarActivity.start(this);
+    fun onClickDecoration(view: View) {
+        DecorationActivity.start(this)
     }
 
-    public void onClickDecoration(View view) {
-        DecorationActivity.start(this);
+    fun onClickGroupAndDecoration(view: View) {
+        GroupAndDecorationActivity.start(view.context)
     }
 
-    public void onClickGroupAndDecoration(View view) {
-        GroupAndDecorationActivity.start(this);
-    }
 
-    public void onClickMaterialDesign2(View view) {
-        CeilingActivity.start(view.getContext());
-    }
 
-    public void onComplexCeilings(View view) {
-        ActivityCeilingDouble.Companion.start(view.getContext());
+    fun onComplexCeilings(view: View) {
+        start(view.context)
     }
 }
-

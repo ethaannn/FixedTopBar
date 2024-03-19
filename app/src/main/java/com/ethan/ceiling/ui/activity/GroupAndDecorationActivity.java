@@ -1,9 +1,11 @@
 package com.ethan.ceiling.ui.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,9 +30,9 @@ public class GroupAndDecorationActivity extends AppCompatActivity {
 
     private ActivityGroupAndDecorationBinding mBinding;
 
-    public static void start(Activity activity) {
-        Intent intent = new Intent(activity, GroupAndDecorationActivity.class);
-        activity.startActivity(intent);
+    public static void start(@NonNull Context context) {
+        Intent intent = new Intent(context, GroupAndDecorationActivity.class);
+        context.startActivity(intent);
     }
 
     @Override

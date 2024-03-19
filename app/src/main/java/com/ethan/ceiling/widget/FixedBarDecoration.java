@@ -73,7 +73,7 @@ public class FixedBarDecoration extends RecyclerView.ItemDecoration {
                 if (isFirstItem) {
                     c.drawRect(0, view.getTop() - mItemHeaderHeight, parent.getWidth(), view.getTop(), mItemHeaderPaint);
                     mTextPaint.getTextBounds("悬浮固定栏", 0, "悬浮固定栏".length(), mTextRect);
-                    c.drawText("悬浮固定栏", parent.getWidth() / 2 - mTextRect.width() / 2, (view.getTop() - mItemHeaderHeight) + mItemHeaderHeight / 2 + mTextRect.height() / 2, mTextPaint);
+                    c.drawText("悬浮固定栏", (float) parent.getWidth() / 2 - mTextRect.width() / 2, (view.getTop() - mItemHeaderHeight) + mItemHeaderHeight / 2 + mTextRect.height() / 2, mTextPaint);
                 } else {
                     c.drawRect(0, view.getTop() - 1, parent.getWidth(), view.getTop(), mLinePaint);
                 }

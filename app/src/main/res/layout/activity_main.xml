@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:id="@+id/layout_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
@@ -11,13 +12,6 @@
         android:text="吸顶效果的几种实现方式:"
         android:textColor="@android:color/black"
         android:textSize="20sp" />
-
-    <Button
-        android:id="@+id/btn_two_header"
-        style="@style/btn_style"
-        android:onClick="onClickTwoTopBar"
-        android:text="1. 通过隐藏/显示 两个一模一样的顶部栏" />
-
     <Button
         android:id="@+id/btn_listview"
         style="@style/btn_style"
@@ -36,11 +30,7 @@
         android:onClick="onClickMaterialDesign"
         android:text="4. 通过android5.0的MaterialDesign风格" />
 
-    <Button
-        android:id="@+id/btn_material_design_2"
-        style="@style/btn_style"
-        android:onClick="onClickMaterialDesign2"
-        android:text=" 通过android5.0的MaterialDesign风格2" />
+
 
     <Button
         android:id="@+id/btn_rv_decoration"

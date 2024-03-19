@@ -19,12 +19,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DecorationActivity extends AppCompatActivity {
-    private View headerView;
-    private List<String> list;
-    private NormalAdapter normalAdapter;
+    private View                headerView;
+    private List<String>        list;
+    private NormalAdapter       normalAdapter;
     private LinearLayoutManager linearLayoutManager;
 
     private ActivityDecorationBinding mBinding;
+
     public static void start(Activity activity) {
         Intent intent = new Intent(activity, DecorationActivity.class);
         activity.startActivity(intent);
@@ -43,9 +44,9 @@ public class DecorationActivity extends AppCompatActivity {
     private void initView() {
         linearLayoutManager = new LinearLayoutManager(this);
         normalAdapter = new NormalAdapter(list);
-       mBinding.rvList.addItemDecoration(new FixedBarDecoration(this));
-       mBinding.rvList.setLayoutManager(linearLayoutManager);
-       mBinding.rvList.setAdapter(normalAdapter);
+        mBinding.rvList.addItemDecoration(new FixedBarDecoration(this));
+        mBinding.rvList.setLayoutManager(linearLayoutManager);
+        mBinding.rvList.setAdapter(normalAdapter);
         headerView = LayoutInflater.from(this).inflate(R.layout.header, mBinding.rvList, false);
         normalAdapter.setmHeaderView(headerView);
 

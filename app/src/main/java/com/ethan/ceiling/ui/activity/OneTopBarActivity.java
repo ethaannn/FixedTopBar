@@ -50,24 +50,24 @@ public class OneTopBarActivity extends AppCompatActivity {
         normalAdapter = new NormalAdapter(list);
 
         mBinding.recyclerView.setLayoutManager(linearLayoutManager);
-        mBinding.recyclerView.setNestedScrollingEnabled(false);
+        mBinding.recyclerView.setNestedScrollingEnabled(true);
         mBinding.recyclerView.setAdapter(normalAdapter);
-        mBinding.scrollView.setScrollChangeListener((x, y, oldX, oldY) -> {
-            if (y >= topHeight) {
-                if (mBinding.includeInsideFixedBar.rlInsideFixed.getParent() != mBinding.llFixedParent) {
-                    mBinding.insideFixedBarParent.removeView(mBinding.includeInsideFixedBar.rlInsideFixed);
-                    mBinding.llFixedParent.addView(mBinding.includeInsideFixedBar.rlInsideFixed);
-                    mBinding.recyclerView.setNestedScrollingEnabled(true);
-
-                }
-            } else {
-                if (mBinding.includeInsideFixedBar.rlInsideFixed.getParent() != mBinding.insideFixedBarParent) {
-                    mBinding.llFixedParent.removeView(mBinding.includeInsideFixedBar.rlInsideFixed);
-                    mBinding.insideFixedBarParent.addView(mBinding.includeInsideFixedBar.rlInsideFixed);
-                    mBinding.recyclerView.setNestedScrollingEnabled(false);
-                }
-            }
-        });
+        //mBinding.scrollView.setScrollChangeListener((x, y, oldX, oldY) -> {
+        //    if (y >= topHeight) {
+        //        if (mBinding.includeInsideFixedBar.rlInsideFixed.getParent() != mBinding.llFixedParent) {
+        //            mBinding.insideFixedBarParent.removeView(mBinding.includeInsideFixedBar.rlInsideFixed);
+        //            mBinding.llFixedParent.addView(mBinding.includeInsideFixedBar.rlInsideFixed);
+        //            mBinding.recyclerView.setNestedScrollingEnabled(true);
+        //
+        //        }
+        //    } else {
+        //        if (mBinding.includeInsideFixedBar.rlInsideFixed.getParent() != mBinding.insideFixedBarParent) {
+        //            mBinding.llFixedParent.removeView(mBinding.includeInsideFixedBar.rlInsideFixed);
+        //            mBinding.insideFixedBarParent.addView(mBinding.includeInsideFixedBar.rlInsideFixed);
+        //            mBinding.recyclerView.setNestedScrollingEnabled(false);
+        //        }
+        //    }
+        //});
     }
 
     private void initList() {
