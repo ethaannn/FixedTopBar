@@ -1,19 +1,14 @@
 package com.ethan.ceiling.adapter
 
 import android.content.Context
-import android.graphics.Color
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
-import android.view.animation.LinearInterpolator
-import androidx.core.view.marginStart
 import com.ethan.ceiling.R
-import com.ethan.ceiling.bean.BeanNav
 import com.ethan.ceiling.databinding.LayoutMallTopTabItemBinding
-import com.ethan.ceiling.databinding.LayoutNaviItemBinding
 import io.github.uhsk.kit.android.dp2px
 import io.github.uhsk.kit.android.sp2px
-import io.github.uhsk.kit.android.view.imageResource
+import io.github.uhsk.kit.asColor
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.CommonNavigatorAdapter
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerIndicator
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTitleView
@@ -21,6 +16,7 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.indicators.Li
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.CommonPagerTitleView
 
 class AdapterMallTopTab(val list: ArrayList<String>) : CommonNavigatorAdapter() {
+
 
     override fun getCount(): Int = list.size
     override fun getTitleView(context: Context?, position: Int): IPagerTitleView {
@@ -33,12 +29,12 @@ class AdapterMallTopTab(val list: ArrayList<String>) : CommonNavigatorAdapter() 
             setContentView(mBinding.root)
             onPagerTitleChangeListener = object : CommonPagerTitleView.OnPagerTitleChangeListener {
                 override fun onSelected(p0: Int, p1: Int) {
-                    mBinding.tabItem.setTextColor(Color.BLACK)
+                    mBinding.tabItem.setTextColor(R.color.color_3BBECC.asColor(context=context!!))
                     mBinding.tabItem.setTextSize(TypedValue.COMPLEX_UNIT_PX, 15.sp2px().toFloat())
                 }
 
                 override fun onDeselected(p0: Int, p1: Int) {
-                    mBinding.tabItem.setTextColor(Color.LTGRAY)
+                    mBinding.tabItem.setTextColor(R.color.color_221613.asColor(context = context!!))
                     mBinding.tabItem.setTextSize(TypedValue.COMPLEX_UNIT_PX, 14.sp2px().toFloat())
                 }
 
@@ -67,7 +63,7 @@ class AdapterMallTopTab(val list: ArrayList<String>) : CommonNavigatorAdapter() 
     override fun getIndicator(context: Context?): IPagerIndicator {
 
         return LinePagerIndicator(context).apply {
-            setColors(R.color.color_3BBECC)
+            setColors(R.color.color_3BBECC.asColor(context!!))
             lineHeight = 3.dp2px().toFloat()
             mode = LinePagerIndicator.MODE_WRAP_CONTENT
             xOffset = 15.dp2px().toFloat()

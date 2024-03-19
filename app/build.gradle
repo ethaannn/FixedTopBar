@@ -43,7 +43,6 @@ dependencies {
     implementation(libs.common.ultimatebarx)
     implementation(libs.slf4j.api)
     implementation(libs.slf4j.logback.android)
-//    implementation(libs.slf4j.logback.classic)
     implementation(libs.tencent.qmuiteam.qmui)
     implementation(libs.tencent.qmuiteam.arch)
     kapt(libs.tencent.qmuiteam.arch.compiler)

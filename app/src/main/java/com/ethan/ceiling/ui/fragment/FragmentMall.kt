@@ -13,6 +13,7 @@ import com.ethan.ceiling.common.ARG_PARAM1
 import com.ethan.ceiling.common.ARG_PARAM2
 import com.ethan.ceiling.databinding.FragmentMallBinding
 import com.ethan.ceiling.event.EventAppBarOffsetChanged
+import com.ethan.ceiling.manager.ILoggerManager
 import com.ethan.ceiling.manager.IRuntimeManager
 import com.google.common.eventbus.EventBus
 import com.google.common.eventbus.Subscribe
@@ -26,7 +27,7 @@ import kotlin.math.abs
 
 
 @Suppress(names = ["UnstableApiUsage"])
-class FragmentMall : Fragment() ,KoinComponent{
+class FragmentMall : Fragment(), KoinComponent {
     private val mLogger: org.slf4j.Logger = org.slf4j.LoggerFactory.getLogger(this.javaClass)
     private var param1: String? = null
     private var param2: String? = null
@@ -66,6 +67,8 @@ class FragmentMall : Fragment() ,KoinComponent{
         mBinding.layoutParentTabSegment.apply {
             layoutParams.apply {
                 setPadding(0, get<IRuntimeManager>().statusBarHeight, 0, 0)
+                get<ILoggerManager>().init()
+
             }
         }
         initMagicIndicator()
@@ -82,6 +85,7 @@ class FragmentMall : Fragment() ,KoinComponent{
         mAdapter.setOnTabItemClickListener(object : AdapterMallTopTab.OnTabItemClickListener {
             override fun onClick(view: View, position: Int) {
                 mFragmentHelper.handlePageSelected(position, true)
+                switchPages(i = position)
             }
         })
     }
@@ -91,17 +95,14 @@ class FragmentMall : Fragment() ,KoinComponent{
         val mHeight: Float = 300.dp2px().toFloat()
         val mOffsetY = abs(event.offset).toFloat()
         val scale: Float = if (mOffsetY / mHeight > 1) 1.toFloat() else mOffsetY / mHeight
-        val alpha:Int = (scale * 255).toInt()
-        mBinding.layoutParentTabSegment.setBackgroundColor(Color.argb(alpha,255,255,255))
-        val evaluator =ArgbEvaluator()
-        mLogger.debug("LOG:FragmentMall:onGuavaEventBus: event.offset={}", event.offset)
-
+        val alpha: Int = (scale * 255).toInt()
+        mBinding.layoutParentTabSegment.setBackgroundColor(Color.argb(alpha, 255, 255, 255))
         if (event.scrollOrientation == 0) {
-            val color = evaluator.evaluate(scale, Color.argb(255, 255, 255, 255), Color.argb(255, 34, 22, 19)) as Int
+            val color = ArgbEvaluator().evaluate(scale, Color.argb(255, 255, 255, 255), Color.argb(255, 34, 22, 19)) as Int
             mBinding.imgShoppingCar.setColorFilter(color)
             mBinding.imgShoppingCar.setColorFilter(color)
         } else {
-            val color = evaluator.evaluate(1-scale, Color.argb(255, 34, 22, 19), Color.argb(255, 255, 255, 255)) as Int
+            val color = ArgbEvaluator().evaluate(1 - scale, Color.argb(255, 34, 22, 19), Color.argb(255, 255, 255, 255)) as Int
             mBinding.imgShoppingCar.setColorFilter(color)
             mBinding.imgSearch.setColorFilter(color)
         }
