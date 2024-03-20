@@ -1,55 +1,48 @@
-package com.ethan.ceiling.ui.activity;
+package com.ethan.ceiling.ui.activity
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
+import android.app.Activity
+import android.content.Intent
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.ethan.ceiling.databinding.ActivityMaterialDesignBinding
+import com.ethan.ceiling.ui.adapter.NormalAdapter
+import org.koin.core.component.KoinComponent
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
-import com.ethan.ceiling.adapter.NormalAdapter;
-import com.ethan.ceiling.databinding.ActivityMaterialDesignBinding;
-
-import java.util.ArrayList;
-import java.util.List;
-
-
-/**
- * Created by lihongxin on 2019/1/21
- */
-public class MaterialDesignTopBarActivity extends AppCompatActivity {
-    private List<String> list;
-    private NormalAdapter normalAdapter;
-    private LinearLayoutManager           linearLayoutManager;
-    private ActivityMaterialDesignBinding mBinding;
-
-    public static void start(Activity activity) {
-        Intent intent = new Intent(activity, MaterialDesignTopBarActivity.class);
-        activity.startActivity(intent);
+class MaterialDesignTopBarActivity : AppCompatActivity() ,KoinComponent{
+    private var list: MutableList<String> = arrayListOf()
+    private var normalAdapter: NormalAdapter? = null
+    private var linearLayoutManager: LinearLayoutManager? = null
+    private var mBinding: ActivityMaterialDesignBinding? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        mBinding = ActivityMaterialDesignBinding.inflate(
+            layoutInflater
+        )
+        setContentView(mBinding!!.getRoot())
+        initList()
+        initView()
     }
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mBinding = ActivityMaterialDesignBinding.inflate(getLayoutInflater());
-        setContentView(mBinding.getRoot());
-        initList();
-        initView();
-    }
+    private fun initList() {
 
-    private void initList() {
-        list = new ArrayList<>();
-        for (int i = 1; i <= 100; i++) {
-            list.add(i + "");
+        for (i in 1..100) {
+            list.add(i.toString() + "")
         }
     }
 
-    private void initView() {
-        linearLayoutManager = new LinearLayoutManager(this);
-        normalAdapter = new NormalAdapter(list);
-        mBinding.recyclerView.setLayoutManager(linearLayoutManager);
-        mBinding.recyclerView.setNestedScrollingEnabled(false);
-        mBinding.recyclerView.setAdapter(normalAdapter);
+    private fun initView() {
+        linearLayoutManager = LinearLayoutManager(this)
+        normalAdapter = NormalAdapter(list)
+        mBinding!!.recyclerView.setLayoutManager(linearLayoutManager)
+        mBinding!!.recyclerView.isNestedScrollingEnabled = false
+        mBinding!!.recyclerView.setAdapter(normalAdapter)
+    }
+
+    companion object {
+        fun start(activity: Activity) {
+            val intent = Intent(activity, MaterialDesignTopBarActivity::class.java)
+            activity.startActivity(intent)
+        }
     }
 }

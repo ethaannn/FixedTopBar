@@ -12,15 +12,14 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.ethan.ceiling.R
-import com.ethan.ceiling.adapter.AdapterBanner
-import com.ethan.ceiling.adapter.AdapterMallViewPage2
+import com.ethan.ceiling.ui.adapter.AdapterBanner
+import com.ethan.ceiling.ui.adapter.AdapterMallViewPage2
 import com.ethan.ceiling.bean.BeanBanner
 import com.ethan.ceiling.common.ARG_PARAM1
 import com.ethan.ceiling.common.ARG_PARAM2
 import com.ethan.ceiling.databinding.FragmentRideCarBinding
 import com.ethan.ceiling.event.EventAppBarOffsetChanged
 import com.ethan.ceiling.manager.IRuntimeManager
-import com.ethan.ceiling.util.ViewUtils
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.common.eventbus.EventBus
@@ -128,7 +127,7 @@ class FragmentRideCar : Fragment(), KoinComponent {
         val mMediator = TabLayoutMediator(mBinding.tabLayout, mBinding.viewPager2) { tab: TabLayout.Tab, position: Int ->
             val tabView = AppCompatTextView(mBinding.tabLayout.context)
             tabView.text = mSubTabList[position]
-            tabView.setTextSize(TypedValue.COMPLEX_UNIT_PX, ViewUtils.sp2px(13f).toFloat())
+            tabView.setTextSize(TypedValue.COMPLEX_UNIT_PX, 13.sp2px().toFloat())
             tabView.setLines(1)
             tabView.setTypeface(Typeface.DEFAULT)
             val layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)

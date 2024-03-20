@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.ethan.ceiling.R
-import com.ethan.ceiling.adapter.AdapterMallTopTab
+import com.ethan.ceiling.ui.adapter.AdapterMallTopTab
 import com.ethan.ceiling.common.ARG_PARAM1
 import com.ethan.ceiling.common.ARG_PARAM2
 import com.ethan.ceiling.databinding.FragmentMallBinding

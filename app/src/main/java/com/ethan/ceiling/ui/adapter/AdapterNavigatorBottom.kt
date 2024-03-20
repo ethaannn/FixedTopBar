@@ -1,4 +1,4 @@
-package com.ethan.ceiling.adapter
+package com.ethan.ceiling.ui.adapter
 
 import android.content.Context
 import android.graphics.Color
@@ -53,7 +53,7 @@ class AdapterNavigatorBottom(val list:ArrayList<BeanNav>) :CommonNavigatorAdapte
         }
     }
 
-    private lateinit var  onNavigationItemClickListener:OnNavigationItemClickListener
+    private lateinit var  onNavigationItemClickListener: OnNavigationItemClickListener
     fun setOnNavigationClickListener(onNavigationItemClickListener: OnNavigationItemClickListener){
         this.onNavigationItemClickListener =onNavigationItemClickListener
     }

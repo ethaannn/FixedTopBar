@@ -8,7 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.ethan.ceiling.R
-import com.ethan.ceiling.adapter.AdapterNavigatorBottom
+import com.ethan.ceiling.ui.adapter.AdapterNavigatorBottom
 import com.ethan.ceiling.bean.BeanNav
 import com.ethan.ceiling.databinding.ActivityCeiling2Binding
 import com.ethan.ceiling.ui.fragment.FragmentCommunity
@@ -31,7 +31,7 @@ class ActivityCeilingDouble : AppCompatActivity() {
         FragmentService.newInstance(param1 = "服务", param2 = ""),
         FragmentMine.newInstance(param1 = "我的", param2 = "")
     )
-    private lateinit var mAdapterNavigatorBottom :AdapterNavigatorBottom
+    private lateinit var mAdapterNavigatorBottom : AdapterNavigatorBottom
     private val mFragmentContainerHelper = FragmentContainerHelper()
     private val mBinding: ActivityCeiling2Binding by lazy {
         ActivityCeiling2Binding.inflate(layoutInflater)
@@ -60,7 +60,7 @@ class ActivityCeilingDouble : AppCompatActivity() {
         mBinding.magicIndicator.apply {
             setBackgroundColor(Color.WHITE)
         }
-        mAdapterNavigatorBottom.setOnNavigationClickListener(object :AdapterNavigatorBottom.OnNavigationItemClickListener{
+        mAdapterNavigatorBottom.setOnNavigationClickListener(object : AdapterNavigatorBottom.OnNavigationItemClickListener{
             override fun onClick(view: View,position:Int) {
                 mFragmentContainerHelper.handlePageSelected(position,false)
                 switchPages(position)

@@ -5,7 +5,6 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.ethan.ceiling.databinding.ActivityMainBinding
 import com.ethan.ceiling.manager.IRuntimeManager
-import com.ethan.ceiling.ui.activity.ActivityCeilingDouble.Companion.start
 import org.koin.android.ext.android.inject
 import org.koin.core.component.KoinComponent
 
@@ -25,14 +24,6 @@ class MainActivity : AppCompatActivity(), KoinComponent {
 
 
 
-    fun onClickOneTopBar(view: View) {
-        OneTopBarActivity.start(this)
-    }
-
-    fun onClickListView(view: View) {
-
-    }
-
     fun onClickMaterialDesign(view: View) {
         MaterialDesignTopBarActivity.start(this)
     }
@@ -45,9 +36,7 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         GroupAndDecorationActivity.start(view.context)
     }
 
-
-
     fun onComplexCeilings(view: View) {
-        start(view.context)
+        ActivityCeilingDouble.start(view.context)
     }
 }

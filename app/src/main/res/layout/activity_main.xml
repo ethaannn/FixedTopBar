@@ -12,17 +12,9 @@
         android:text="吸顶效果的几种实现方式:"
         android:textColor="@android:color/black"
         android:textSize="20sp" />
-    <Button
-        android:id="@+id/btn_listview"
-        style="@style/btn_style"
-        android:onClick="onClickListView"
-        android:text="2. 通过listview" />
 
-    <Button
-        android:id="@+id/btn_one_header"
-        style="@style/btn_style"
-        android:onClick="onClickOneTopBar"
-        android:text="3. 通过动态添加移除 一个顶部栏" />
+
+
 
     <Button
         android:id="@+id/btn_material_design"

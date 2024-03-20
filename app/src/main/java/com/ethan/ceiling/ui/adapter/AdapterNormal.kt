@@ -1,4 +1,4 @@
-package com.ethan.ceiling.adapter
+package com.ethan.ceiling.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package com.ethan.ceiling.widget
+package com.ethan.ceiling.ui.widget
 
 import android.content.Context
 import android.util.AttributeSet

@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ethan.ceiling.R
-import com.ethan.ceiling.adapter.AdapterMallShoppingCategory
-import com.ethan.ceiling.adapter.AdapterShopDetail
+import com.ethan.ceiling.ui.adapter.AdapterMallShoppingCategory
+import com.ethan.ceiling.ui.adapter.AdapterShopDetail
 import com.ethan.ceiling.bean.BeanShopChild
 import com.ethan.ceiling.bean.BeanShoppingInfo
 import com.ethan.ceiling.databinding.FragmentChildBinding
