@@ -14,18 +14,27 @@ class MainActivity : AppCompatActivity(), KoinComponent {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivityMainBinding.inflate(layoutInflater)
-        mBinding.layoutParent.apply {
+        setContentView(mBinding.getRoot())
+        initToolbar()
+    }
+
+    private fun initToolbar() {
+        mBinding.toolbar.apply {
             layoutParams.apply {
                 setPadding(0, mRuntimeManager.statusBarHeight, 0, 0)
             }
         }
-        setContentView(mBinding.getRoot())
+        mBinding.toolbar.title = "吸顶效果合集"
+        mBinding.toolbar.isTitleCentered = true
+        setSupportActionBar(mBinding.toolbar)
     }
 
-
+    fun onComplexCeilings(view: View) {
+        ActivityCeilingDouble.start(view.context)
+    }
 
     fun onClickMaterialDesign(view: View) {
-        MaterialDesignTopBarActivity.start(this)
+        ActivityMaterialDesignTopBar.start(this)
     }
 
     fun onClickDecoration(view: View) {
@@ -36,7 +45,5 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         GroupAndDecorationActivity.start(view.context)
     }
 
-    fun onComplexCeilings(view: View) {
-        ActivityCeilingDouble.start(view.context)
-    }
+
 }

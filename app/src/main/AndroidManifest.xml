@@ -22,7 +22,7 @@
         <activity android:name=".ui.activity.TwoSameTopBarActivity" android:exported="true" />
         <activity android:name=".ui.activity.ListViewAddHeaderActivity" android:exported="true"/>
         <activity android:name=".ui.activity.OneTopBarActivity" android:exported="true"/>
-        <activity android:name=".ui.activity.MaterialDesignTopBarActivity" android:exported="true"/>
+        <activity android:name=".ui.activity.ActivityMaterialDesignTopBar" android:exported="true"/>
         <activity android:name=".ui.activity.DecorationActivity"  android:exported="true"/>
         <activity android:name=".ui.activity.GroupAndDecorationActivity" android:exported="true" />
         <activity android:name=".ui.activity.CeilingActivity" android:exported="false"/>

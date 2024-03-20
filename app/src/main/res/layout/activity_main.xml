@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:id="@+id/layout_parent"
     android:layout_height="match_parent"
+    tools:ignore="HardcodedText"
     android:orientation="vertical">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,32 +20,29 @@
         android:textColor="@android:color/black"
         android:textSize="20sp" />
 
-
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_complex_ceilings"
+        style="@style/btn_style"
+        android:onClick="onComplexCeilings"
+        android:text="@string/msg_ceiling_2" />
 
     <Button
         android:id="@+id/btn_material_design"
         style="@style/btn_style"
         android:onClick="onClickMaterialDesign"
-        android:text="4. 通过android5.0的MaterialDesign风格" />
-
-
+        android:text="2. 通过android5.0的MaterialDesign风格" />
 
     <Button
         android:id="@+id/btn_rv_decoration"
         style="@style/btn_style"
         android:onClick="onClickDecoration"
-        android:text="5. 通过RecyclerView的ItemDecoration分割线" />
+        android:text="3. 通过RecyclerView的ItemDecoration分割线" />
 
     <Button
         android:id="@+id/btn_group_and_decoration"
         style="@style/btn_style"
         android:onClick="onClickGroupAndDecoration"
-        android:text="扩展实现:分组+吸顶效果的实现" />
+        android:text="4.扩展实现:分组+吸顶效果的实现" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_complex_ceilings"
-        style="@style/btn_style"
-        android:onClick="onComplexCeilings"
-        android:text="Android原生实现复杂吸顶效果" />
+
 </LinearLayout>

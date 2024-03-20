@@ -20,7 +20,7 @@ import java.io.FileFilter
 import java.util.Locale
 
 internal class ImplLoggerManager : ILoggerManager, KoinComponent {
-    private val mLogger: org.slf4j.Logger = org.slf4j.LoggerFactory.getLogger(this.javaClass)
+    private val mLogger: org.slf4j.Logger = LoggerFactory.getLogger(this.javaClass)
     private val mContext: Context by inject()
     private val mOutputDir: File = File(mContext.externalCacheDir, "logs")
 

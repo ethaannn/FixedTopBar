@@ -70,9 +70,6 @@ class CeilingActivity : AppCompatActivity() {
     private fun initViewPager2() {
         mBinding!!.viewPager2.offscreenPageLimit = ViewPager2.OFFSCREEN_PAGE_LIMIT_DEFAULT
         mBinding!!.viewPager2.registerOnPageChangeCallback(object : OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-            }
         })
         mAdapter = AdapterMallViewPage2(supportFragmentManager, lifecycle, tabListFixed)
         mBinding!!.viewPager2.adapter = mAdapter
