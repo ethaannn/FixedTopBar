@@ -7,33 +7,40 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.chad.library.adapter4.QuickAdapterHelper
 import com.ethan.ceiling.R
 import com.ethan.ceiling.databinding.ActivityDecorationBinding
-import com.ethan.ceiling.ui.adapter.NormalAdapter
+import com.ethan.ceiling.ui.adapter.AdapterNormal
+import com.ethan.ceiling.ui.adapter.HeaderAdapter
 import com.ethan.ceiling.ui.widget.FixedBarDecoration
 
 class DecorationActivity : AppCompatActivity() {
     private var headerView: View? = null
     private var list: MutableList<String>  = arrayListOf()
-    private var normalAdapter: NormalAdapter? = null
+    private lateinit var normalAdapter: AdapterNormal
     private var linearLayoutManager: LinearLayoutManager? = null
-    private var mBinding: ActivityDecorationBinding? = null
+    private lateinit var mBinding: ActivityDecorationBinding
+    private lateinit var  mHelper:QuickAdapterHelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivityDecorationBinding.inflate(layoutInflater)
-        setContentView(mBinding!!.getRoot())
+        setContentView(mBinding.getRoot())
         initList()
         initView()
     }
 
     private fun initView() {
+
         linearLayoutManager = LinearLayoutManager(this)
-        normalAdapter = NormalAdapter(list)
-        mBinding!!.rvList.addItemDecoration(FixedBarDecoration(this))
-        mBinding!!.rvList.setLayoutManager(linearLayoutManager)
-        mBinding!!.rvList.setAdapter(normalAdapter)
-        headerView = LayoutInflater.from(this).inflate(R.layout.header, mBinding!!.rvList, false)
-        normalAdapter!!.setmHeaderView(headerView)
+        normalAdapter = AdapterNormal()
+        mBinding.rvList.addItemDecoration(FixedBarDecoration(this))
+        mBinding.rvList.setLayoutManager(linearLayoutManager)
+        mBinding.rvList.setAdapter(normalAdapter)
+        mHelper= QuickAdapterHelper.Builder(normalAdapter).build()
+        normalAdapter.submitList(list)
+//        headerView = LayoutInflater.from(this).inflate(R.layout.header, mBinding.rvList, false)
+//        normalAdapter.setmHeaderView(headerView)
+//        mHelper.addBeforeAdapter(0,HeaderAdapter())
     }
 
     private fun initList() {
